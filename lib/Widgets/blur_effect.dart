@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:irana/Constants.dart';
-import 'package:irana/styles.dart';
 
 class BlurEffect extends StatelessWidget {
   final double height;

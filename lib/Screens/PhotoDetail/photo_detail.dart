@@ -3,11 +3,17 @@ import 'Widgets/body.dart';
 
 class PhotoDetails extends StatelessWidget {
   final tag;
-  PhotoDetails({@required this.tag});
+  final image;
+  final userImage;
+  PhotoDetails({@required this.tag, @required this.image, this.userImage});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Body(tag: tag),
+      body: Body(
+        tag: tag,
+        image: image,
+        userImage: userImage,
+      ),
     );
   }
 }

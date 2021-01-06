@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:irana/Screens/AboutUs/about_us.dart';
 import 'package:irana/Screens/Home/home.dart';
 import 'package:irana/Screens/SplashScreen/splash_screen.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Irana',
         // home: SplashScreen(),
-        home: Home(),
+        home: AboutUs(),
       ),
     );
   }

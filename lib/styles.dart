@@ -28,4 +28,9 @@ TextStyle yekanBold = TextStyle(
     fontFamily: "YekanBakh",
     fontWeight: FontWeight.w700,
     fontSize: 20);
+TextStyle yekanRegular = TextStyle(
+    color: Colors.white,
+    fontFamily: "YekanBakh",
+    fontWeight: FontWeight.w400,
+    fontSize: 20);
 EdgeInsets usuallMargin = const EdgeInsets.symmetric(horizontal: 16);

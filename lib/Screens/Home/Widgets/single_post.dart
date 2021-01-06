@@ -143,6 +143,8 @@ class _SinglePostState extends State<SinglePost> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => PhotoDetails(
+          image: widget.image,
+          userImage: widget.userImage,
           tag: widget.tag,
         ),
       ),

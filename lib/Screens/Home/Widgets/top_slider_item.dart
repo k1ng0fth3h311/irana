@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:irana/Widgets/blur_effect.dart';
 
 class TopSliderItem extends StatelessWidget {
   final image;
