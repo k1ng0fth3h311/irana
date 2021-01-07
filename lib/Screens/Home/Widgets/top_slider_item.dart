@@ -17,12 +17,20 @@ class TopSliderItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          Material(
+            borderRadius: BorderRadius.circular(30),
+            elevation: 5,
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+              ),
               height: 60,
               child: Image.asset(
                 image,
                 fit: BoxFit.contain,
-              )),
+              ),
+            ),
+          ),
           // BlurEffect(
           //   height: 60,
           //   width: 60,

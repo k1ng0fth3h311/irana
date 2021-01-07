@@ -1,7 +1,8 @@
 class CategoryModel {
   final String name;
   final String image;
-  CategoryModel({this.image, this.name});
+  final String wideImage;
+  CategoryModel({this.image, this.name, this.wideImage});
 
   String getName() {
     return name;
@@ -9,5 +10,9 @@ class CategoryModel {
 
   String getImage() {
     return image;
+  }
+
+  String getWideImage() {
+    return wideImage;
   }
 }

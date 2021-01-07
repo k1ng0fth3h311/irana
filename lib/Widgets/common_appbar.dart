@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:irana/Constants.dart';
+import 'package:irana/Widgets/back_icon.dart';
 import 'package:irana/styles.dart';
 
-class CommenAppBar extends StatelessWidget {
+class CommonAppBar extends StatelessWidget {
   final text;
-  CommenAppBar({this.text});
+  CommonAppBar({this.text});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,17 +21,21 @@ class CommenAppBar extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset("${imagesFolder}back_icon.png"),
+            BackIcon(),
             SizedBox(
               width: 115,
             ),
-            Text(
-              text,
-              style: yekanBold.copyWith(fontSize: 22),
-            )
+            _title(text),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _title(text) {
+    return Text(
+      text,
+      style: yekanBold.copyWith(fontSize: 22),
     );
   }
 }

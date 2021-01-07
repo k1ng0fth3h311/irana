@@ -28,10 +28,17 @@ class _BestPhotoMonthState extends State<BestPhotoMonth> {
           Container(
             alignment: Alignment.center,
             height: 180,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+            ),
             width: MediaQuery.of(context).size.width - 70,
-            child: Image.asset(
-              widget.image,
-              fit: BoxFit.contain,
+            child: Material(
+              borderRadius: BorderRadius.circular(15),
+              elevation: 5,
+              child: Image.asset(
+                widget.image,
+                fit: BoxFit.contain,
+              ),
             ),
           ),
           BestPhotoSide(

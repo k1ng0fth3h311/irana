@@ -18,82 +18,87 @@ class _DetailsState extends State<Details> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
-            ),
-          ),
-          height: MediaQuery.of(context).size.height / 2,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 16, right: 16, top: 8, bottom: 0),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(15),
+          topRight: Radius.circular(15),
+        ),
+      ),
+      height: MediaQuery.of(context).size.height / 2,
+      width: MediaQuery.of(context).size.width,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _userDetails(),
+            height20,
+            Expanded(
+              child: SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 70),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "جاذبه های طبیعی",
-                            style: yekanMedium.copyWith(
-                              fontSize: 10,
-                              color: Color.fromRGBO(36, 22, 99, 1),
-                            ),
-                          ),
-                          Text(
-                            "مسعود صادقی دینانی",
-                            style: yekanMedium.copyWith(
-                              fontSize: 10,
-                              color: Color.fromRGBO(36, 22, 99, 1),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    _photoTitle(),
                     height20,
-                    Container(
-                      height: MediaQuery.of(context).size.height / 2.4,
-                      child: SingleChildScrollView(
-                        // physics: NeverScrollableScrollPhysics(),
-                        child: Column(
-                          children: [
-                            Text(
-                              "دریاچه هرمز - خلیج فارس",
-                              style: yekanHeavy.copyWith(
-                                color: Color.fromRGBO(22, 15, 48, 1),
-                              ),
-                            ),
-                            height20,
-                            _options(context),
-                            height20,
-                            Text(
-                              lorem,
-                              textAlign: TextAlign.center,
-                              style: yekanRegular.copyWith(
-                                  color: Color.fromRGBO(8, 51, 88, 1),
-                                  fontSize: 17),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                    _photoDescription(),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
+      ),
+    );
+  }
+
+  Widget _photoDescription() {
+    return Column(
+      children: [
+        height20,
+        _options(context),
+        height20,
+        Text(
+          lorem,
+          textAlign: TextAlign.center,
+          style: yekanRegular.copyWith(
+              color: Color.fromRGBO(8, 51, 88, 1), fontSize: 17),
+        )
       ],
+    );
+  }
+
+  Widget _photoTitle() {
+    return Text(
+      "دریاچه هرمز - خلیج فارس",
+      style: yekanHeavy.copyWith(
+        color: Color.fromRGBO(22, 15, 48, 1),
+      ),
+    );
+  }
+
+  Widget _userDetails() {
+    return Padding(
+      padding: const EdgeInsets.only(right: 70),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "جاذبه های طبیعی",
+            style: yekanMedium.copyWith(
+              fontSize: 10,
+              color: Color.fromRGBO(36, 22, 99, 1),
+            ),
+          ),
+          Text(
+            "مسعود صادقی دینانی",
+            style: yekanMedium.copyWith(
+              fontSize: 10,
+              color: Color.fromRGBO(36, 22, 99, 1),
+            ),
+          ),
+        ],
+      ),
     );
   }
 

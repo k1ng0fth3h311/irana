@@ -14,40 +14,51 @@ class Body extends StatelessWidget {
       alignment: Alignment.center,
       fit: StackFit.expand,
       children: [
+        Column(
+          children: [],
+        ),
         // Positioned()
-        Positioned(
-          top: 0,
-          child: Hero(
-            tag: tag,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (cotext) => FullScrenImage(
-                        image: "${imagesFolder}photo_detail", tag: tag),
-                  ),
-                );
-              },
-              child: Image.asset(
-                "${imagesFolder}photo_detail",
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-        ),
-        Positioned(
-          top: MediaQuery.of(context).size.height / 1.83,
-          child: Details(),
-        ),
+        _photo(context),
+        _details(context),
         Positioned(
           child: Image.asset(
-            "${imagesFolder}photo_details_user",
+            "${imagesFolder}photo_details_user.png",
             fit: BoxFit.fill,
           ),
           right: 16,
           bottom: MediaQuery.of(context).size.height / 2.54,
         ),
       ],
+    );
+  }
+
+  Widget _photo(context) {
+    return Positioned(
+      top: 0,
+      child: Hero(
+        tag: tag,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (cotext) => FullScrenImage(
+                    image: "${imagesFolder}photo_detail.png", tag: tag),
+              ),
+            );
+          },
+          child: Image.asset(
+            "${imagesFolder}photo_detail.png",
+            fit: BoxFit.fill,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _details(context) {
+    return Positioned(
+      top: MediaQuery.of(context).size.height / 1.83,
+      child: Details(),
     );
   }
 }
